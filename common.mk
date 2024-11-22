@@ -303,9 +303,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.xiaomi.v2:64
 
-PRODUCT_PACKAGES += \
-    sensor-notifier
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_ODM)/etc/sensors/hals.conf
 
