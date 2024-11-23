@@ -8,6 +8,7 @@
 include vendor/xiaomi/sm8450-common/BoardConfigVendor.mk
 
 COMMON_PATH := device/xiaomi/sm8450-common
+DEVICE_PATH := device/xiaomi/ingres
 
 # A/B
 AB_OTA_UPDATER := true
