@@ -195,7 +195,6 @@ $(foreach sku, $(call to-upper, $(DEVICE_MANIFEST_SKUS)), \
         $(COMMON_PATH)/vintf/manifest.xml \
         $(COMMON_PATH)/vintf/manifest_xiaomi.xml \
         $(if $(TARGET_NFC_SUPPORTED_SKUS),$(COMMON_PATH)/vintf/manifest_no_nfc.xml,) \
-        $(if $(TARGET_PROVIDES_AUDIO_HAL),hardware/qcom-caf/sm8450/audio/primary-hal/configs/common/manifest_non_qmaa.xml,) \
     ))
 
 ifneq ($(TARGET_NFC_SUPPORTED_SKUS),)
