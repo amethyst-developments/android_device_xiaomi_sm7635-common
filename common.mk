@@ -304,8 +304,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.xiaomi.v2:64
 
+ifneq ($(filter cupid diting marble mayfly mondrian thor unicorn zeus ziyi zizhan,$(TARGET_DEVICE)),)
+
 PRODUCT_PACKAGES += \
     sensor-notifier
+
+endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_ODM)/etc/sensors/hals.conf
