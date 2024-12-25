@@ -5,9 +5,9 @@
 #
 
 # Inherit from the proprietary version
-include vendor/xiaomi/sm8450-common/BoardConfigVendor.mk
+include vendor/xiaomi/sm7635-common/BoardConfigVendor.mk
 
-COMMON_PATH := device/xiaomi/sm8450-common
+COMMON_PATH := device/xiaomi/sm7635-common
 
 # A/B
 AB_OTA_UPDATER := true
@@ -19,6 +19,7 @@ AB_OTA_PARTITIONS += \
     product \
     recovery \
     system \
+    system_dlkm \
     system_ext \
     vbmeta \
     vbmeta_system \
@@ -28,7 +29,7 @@ AB_OTA_PARTITIONS += \
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a-branchprot
+TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
@@ -61,7 +62,7 @@ TARGET_USES_QCOM_MM_AUDIO := true
 $(call soong_config_set, ufsbsg, ufsframework, bsg)
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := taro
+TARGET_BOOTLOADER_BOARD_NAME := volcano
 TARGET_NO_BOOTLOADER := true
 
 # Camera
@@ -113,7 +114,7 @@ BOARD_BOOTCONFIG := \
 TARGET_KERNEL_ARCH := arm64
 INLINE_KERNEL_BUILDING := true
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_VERSION := 5.10
+TARGET_KERNEL_VERSION := 6.1
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
@@ -130,7 +131,7 @@ BOARD_SUPER_PARTITION_SIZE := 9126805504 # 0x220000000
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 0x06000000
 
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor vendor_dlkm
+BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor vendor_dlkm system_dlkm
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # 0x21FC00000 # BOARD_SUPER_PARTITION_SIZE - overhead (4MiB)
 
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -138,6 +139,7 @@ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEM_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := ext4
 
 TARGET_COPY_OUT_ODM := odm
@@ -145,12 +147,13 @@ TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
+TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 
 -include vendor/lineage/config/BoardConfigReservedSize.mk
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := taro
+TARGET_BOARD_PLATFORM := volcano
 
 # Powershare
 TARGET_POWERSHARE_PATH := /sys/class/qcom-battery/reverse_chg_mode
