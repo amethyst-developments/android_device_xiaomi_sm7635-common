@@ -23,8 +23,8 @@ source "${HELPER}"
 
 function vendor_imports() {
     cat << EOF >> "$1"
-		"device/xiaomi/sm8450-common",
-		"hardware/qcom-caf/sm8450",
+		"device/xiaomi/sm7635-common",
+		"hardware/qcom-caf/sm7635",
 		"hardware/qcom-caf/wlan",
 		"hardware/xiaomi",
 		"vendor/qcom/opensource/commonsys/display",
