@@ -70,7 +70,7 @@ function lib_to_package_fixup() {
 setup_vendor "${DEVICE_COMMON}" "${VENDOR_COMMON:-$VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "cupid diting marble ingres mayfly mondrian thor unicorn zeus ziyi zizhan"
+write_headers "volcano amethyst"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt"
